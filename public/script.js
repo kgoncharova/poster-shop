@@ -10,7 +10,7 @@ new Vue({
     search: "cat",
     lastSearch: "",
     loading: false,
-		results: []
+    results: []
   },
   methods: {
     addToCart: function (product) {
@@ -46,7 +46,7 @@ new Vue({
     onSubmit: function () {
       this.products = [];
       this.results = [];
-			this.loading = true;
+      this.loading = true;
       var path = "/search?q=".concat(this.search);
       this.$http.get(path)
         .then(function (response) {
@@ -56,33 +56,33 @@ new Vue({
           this.loading = false;
         });
     },
-    appendResults: function() {
-			if(this.products.length < this.results.length) {
-				var toAppend = this.results.slice(
-					this.products.length,
-					LOAD_NUM + this.products.length
-				);
-				this.products = this.products.concat(toAppend);
-			}
-		}
+    appendResults: function () {
+      if (this.products.length < this.results.length) {
+        var toAppend = this.results.slice(
+          this.products.length,
+          LOAD_NUM + this.products.length
+        );
+        this.products = this.products.concat(toAppend);
+      }
+    }
   },
   filters: {
     currency: function (price) {
       return "$".concat(price.toFixed(2));
     }
   },
-  created: function() {
+  created: function () {
     this.onSubmit();
   },
-  updated: function() {
-		var sensor = document.querySelector("#product-list-bottom");
-		watcher = scrollMonitor.create(sensor);
-		watcher.enterViewport(this.appendResults);
-	},
-	beforeUpdate: function() {
-		if (watcher) {
-			watcher.destroy();
-			watcher = null;
-		}
-	}
+  updated: function () {
+    var sensor = document.querySelector("#product-list-bottom");
+    watcher = scrollMonitor.create(sensor);
+    watcher.enterViewport(this.appendResults);
+  },
+  beforeUpdate: function () {
+    if (watcher) {
+      watcher.destroy();
+      watcher = null;
+    }
+  }
 });
