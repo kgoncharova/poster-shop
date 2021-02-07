@@ -1,32 +1,26 @@
 # poster-shop
-The case-study project from the course Build Your First Vue.js App
+The case-study project from the course *Build Your First Vue.js App*
 
 #### Pre-installation
 Ensure [Node.js  >=4](https://nodejs.org/en/download/), [NPM](https://docs.npmjs.com) and [git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git) are installed on your system
 
 #### Installation
 
-1. Clone the repository on your local file system
+1. Clone the repository on your local file system using the [instruction](https://help.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository).
 
-    ```
-    cd /path/to/install/location
-
-    git clone https://github.com/kgoncharova/poster-shop.git
-    ```
-
-2. Change directory into the local clone of the repository
+2. Change directory into the local clone of the repository:
 
     ```
     cd poster-shop
     ```
 
-3. Install dependencies
+3. Install dependencies:
 
     ```
     npm install
     ```
     
-4. Start project
+4. Start project:
 
     ```
     npm run serve
